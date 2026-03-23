@@ -108,6 +108,36 @@
 				'yes!!! and more (such as other old stuff, and stuff that might be useful for your journey, requests are open!).'
 		}
 	];
+
+	const faqs = [
+		{
+			question: 'When will this start?',
+			answer: 'Well into the future, hoping that you guys show interest!!!!'
+		},
+		{
+			question: 'How can I track my progress?',
+			answer:
+				'You will be using a combination of Hackatime and Lapse to track time spent researching and coding. You have to be between 13-18yo.'
+		},
+		{
+			question: 'Can I work on new software on a new device?',
+			answer: 'No, the goal is to work on software targeting an old device.'
+		},
+		{
+			question: 'Will the shop be expanded?',
+			answer: 'Absolutely! Join the Slack channel to suggest items you want to see in the shop.'
+		},
+		{
+			question: 'Can I help out?',
+			answer:
+				'Yes! DM @atomtables to find out how you can help out, whether that be through coding, design, or just spreading the word.'
+		},
+		{
+			question: "I don't understand. Who do I ask for help?",
+			answer:
+				'DM @atomtables and ask away! Slack channel coming soon'
+		}
+	];
 </script>
 
 <svelte:window on:mousemove={handleMouseMove} />
@@ -229,9 +259,9 @@
 				computer from the '00s actually connect to the Internet.
 				<br /><br />
 				If you miss that, then this You-Ship-We-Ship is for YOU!!! Yes you, that one person who's been
-				looking for a reason to mess around with that ancient laptop in the attic! And you over there
-				who wants to try to do something with a phone from before you were born! and ESPECIALLY you, that
-				person who wants to save a piece of history from the landfill, or worse, ebay...
+				<b>looking for a reason to mess around with that ancient laptop</b> in the attic! And you over there
+				who wants to try to do something with a <b>phone from before you were born</b>! and ESPECIALLY you, that
+				person who wants to save a <b>piece of history from the landfill, or worse, ebay...</b>
 			</p>
 		</div>
 	</div>
@@ -337,17 +367,23 @@
 		<div class="flex shrink flex-col gap-4">
 			<h2 class="font-ndot text-3xl font-bold">But what should I include?</h2>
 			<div class="text-lg leading-relaxed font-medium text-slate-600 dark:text-slate-300">
-				Make sure you do the following:
+				<span class="font-light">
+                    Make sure you do the following:
+                </span>
 				<br />
 				<ul class="list-inside list-disc">
 					<li>
-						Find a program, networked or otherwise, on an <b>old</b> system that no longer works. Try
-						to aim for unique services that don't already exist, or a unique implementation that hasn't
+						Find a program, networked or otherwise, on an <b>old</b> system that no longer works. 
+                        <ul class="font-thin ml-8 list-disc text-sm list-inside">
+                            <li>
+                                Try to aim for unique services that don't already exist, or a unique implementation that hasn't
 						been seen before.
+                            </li>
+                        </ul>
 					</li>
 					<li>
 						Use <b>lapse</b> to track your progress spent on figuring out why it no longer works.
-						<ul class="ml-8 list-inside list-disc text-sm">
+						<ul class="ml-8 list-inside list-disc text-sm font-thin">
 							<li>
 								You can use tools like <b>Charles</b> or <b>Burpsuite</b> to proxy requests to see what's
 								going on.
@@ -362,7 +398,7 @@
 					<li>
 						Use <b>hackatime</b> to track your progress engineering a fix, a patch, or a workaround
 						to make it work again.
-						<ul class="ml-8 list-inside list-disc text-sm">
+						<ul class="ml-8 list-inside list-disc text-sm font-thin">
 							<li>
 								You should try to package your app, tweak, or patch to make it easily installable on
 								"new" systems.
@@ -429,6 +465,22 @@
 						<h3 class="font-ndot mb-1 text-xl font-bold">{item.name}</h3>
 						<p class="text-sm font-medium text-slate-500 dark:text-slate-400">{item.description}</p>
 					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
+</div>
+
+<div class="w-screen bg-slate-200/30 p-10 backdrop-blur-sm dark:bg-slate-800/30">
+	<div class="m-auto flex max-w-4xl flex-col gap-8">
+		<h2 class="font-ndot text-3xl font-bold text-center">Frequently Asked Questions</h2>
+		<div class="flex flex-col gap-6">
+			{#each faqs as faq}
+				<div class="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-900/50 p-6 rounded-xl border border-slate-300/50 dark:border-slate-700/50">
+					<h3 class="text-xl font-bold text-slate-800 dark:text-slate-200">{faq.question}</h3>
+					<p class="text-lg leading-relaxed font-medium text-slate-600 dark:text-slate-400">
+						{faq.answer}
+					</p>
 				</div>
 			{/each}
 		</div>
