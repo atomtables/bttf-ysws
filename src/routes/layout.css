@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@font-face {
+    font-family: "Ndot55Caps";
+    src: url("/Ndot55Caps-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Ndot57";
+    src: url("/Ndot57-Regular.otf") format("opentype");
+}
+
+.font-ndot {
+    font-family: "Ndot55Caps", sans-serif;
+}
+
+.font-ndot57 {
+    font-family: "Ndot57", sans-serif;
+}
